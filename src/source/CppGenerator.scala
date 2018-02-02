@@ -116,6 +116,10 @@ class CppGenerator(spec: Spec) extends Generator(spec) {
     // Make sure we don't constexpr optionals as some might not support it
     val canConstexpr = c.ty.resolved.base match {
       case p: MPrimitive if c.ty.resolved.base != MOptional => true
+      case d: MDef => d.defType match {
+        case DEnum => true
+        case _ => false
+      }
       case _ => false
     }
     canConstexpr
@@ -132,7 +136,7 @@ class CppGenerator(spec: Spec) extends Generator(spec) {
         case d: Double if marshal.fieldType(c.ty) == "float" => " = " + d.toString + "f;"
         case d: Double => " = " + d.toString + ";"
         case b: Boolean => if (b) " = true;" else " = false;"
-        case e: EnumValue => " = " + marshal.typename(c.ty) + "::" + idCpp.enum(e.ty.name + "_" + e.name) + ";"
+        case e: EnumValue => " = " + marshal.typename(c.ty) + "::" + idCpp.enum(e.name) + ";"
         case _ => ";"
         }
       }
