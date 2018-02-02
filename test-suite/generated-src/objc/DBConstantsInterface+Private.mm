@@ -40,7 +40,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 + (DBConstantEnum)constEnum
 {
-    static DBConstantEnum const s_constEnum = ConstantEnumSomeValue;
+    static DBConstantEnum const s_constEnum = DBConstantEnumSomeValue;
     return s_constEnum;
 }
 

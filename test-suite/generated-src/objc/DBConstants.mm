@@ -40,7 +40,7 @@ BOOL const DBConstantsDummy = NO;
 
 + (DBConstantEnum)constEnum
 {
-    static DBConstantEnum const s_constEnum = ConstantEnumSomeValue;
+    static DBConstantEnum const s_constEnum = DBConstantEnumSomeValue;
     return s_constEnum;
 }
 
