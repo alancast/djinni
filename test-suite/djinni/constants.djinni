@@ -67,6 +67,8 @@ constants_interface = interface +c {
     const f32_constant: f32 = 5.0;
     const f64_constant: f64 = 5.0;
 
+    const const_enum: constant_enum = constant_enum::some_value;
+
     const opt_bool_constant: optional<bool> = true;
     const opt_i8_constant: optional<i8> = 1;
     # opt_i16_constant has documentation.

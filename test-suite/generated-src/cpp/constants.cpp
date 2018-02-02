@@ -19,7 +19,7 @@ float const Constants::F32_CONSTANT;
 
 double const Constants::F64_CONSTANT;
 
-constant_enum const Constants::CONST_ENUM;
+constant_enum const Constants::CONST_ENUM = constant_enum::SOME_VALUE;
 
 std::experimental::optional<bool> const Constants::OPT_BOOL_CONSTANT = true;
 

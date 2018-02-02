@@ -35,7 +35,7 @@ struct Constants final {
      */
     static constexpr double F64_CONSTANT = 5.0;
 
-    static constexpr constant_enum CONST_ENUM = constant_enum::SOME_VALUE;
+    static constant_enum const CONST_ENUM;
 
     static std::experimental::optional<bool> const OPT_BOOL_CONSTANT;
 
